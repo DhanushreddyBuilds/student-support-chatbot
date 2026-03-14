@@ -1,0 +1,55 @@
+Database Schema:
+
+Example Table: attendance
+ - roll_no (int(11))
+ - total_classes (int(11))
+ - attended_classes (int(11))
+
+Example Table: conversation_logs
+ - id (int(11))
+ - message (text)
+ - intent (varchar(50))
+ - confidence (float)
+ - timestamp (datetime)
+
+Example Table: courses
+ - id (int(11))
+ - course_name (varchar(50))
+ - duration (varchar(20))
+ - eligibility (varchar(100))
+ - fee (int(11))
+
+Example Table: exam_schedule
+ - id (int(11))
+ - course (varchar(20))
+ - semester (int(11))
+ - subject (varchar(50))
+ - exam_date (date)
+ - exam_time (varchar(20))
+
+Example Table: students
+ - roll_no (int(11))
+ - name (varchar(100))
+ - course (varchar(50))
+
+Example Table: syllabus
+ - id (int(11))
+ - course (varchar(20))
+ - semester (int(11))
+ - subject (varchar(50))
+ - unit1 (text)
+ - unit2 (text)
+ - unit3 (text)
+ - unit4 (text)
+ - unit5 (text)
+
+Example Table: timetable
+ - id (int(11))
+ - course (varchar(20))
+ - semester (int(11))
+ - day (varchar(15))
+ - period1 (varchar(50))
+ - period2 (varchar(50))
+ - period3 (varchar(50))
+ - period4 (varchar(50))
+ - period5 (varchar(50))

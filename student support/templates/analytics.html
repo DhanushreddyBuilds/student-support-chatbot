@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Analytics Dashboard</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        body { font-family: Arial; background:#f4f6f8; padding:20px; }
+        h2 { margin-bottom:20px; }
+        .card {
+            background:white;
+            padding:20px;
+            margin-bottom:20px;
+            border-radius:10px;
+        }
+        table {
+            width:100%;
+            border-collapse: collapse;
+        }
+        th, td {
+            padding:10px;
+            border-bottom:1px solid #ddd;
+            text-align:left;
+        }
+        th {
+            background:#2563eb;
+            color:white;
+        }
+    </style>
+</head>
+<body>
+
+<h2>📊 Student Support Chatbot – Analytics</h2>
+
+<div class="card">
+    <h3>Total Conversations</h3>
+    <p style="font-size:32px;">{{ total }}</p>
+</div>
+
+<div class="card">
+    <h3>Most Common Intents</h3>
+    <table>
+        <tr><th>Intent</th><th>Count</th></tr>
+        {% for intent, count in intents %}
+        <tr>
+            <td>{{ intent }}</td>
+            <td>{{ count }}</td>
+        </tr>
+        {% endfor %}
+    </table>
+</div>
+
+<div class="card">
+    <h3>Daily Usage</h3>
+    <table>
+        <tr><th>Date</th><th>Messages</th></tr>
+        {% for date, count in daily %}
+        <tr>
+            <td>{{ date }}</td>
+            <td>{{ count }}</td>
+        </tr>
+        {% endfor %}
+    </table>
+</div>
+
+</body>
+</html>
