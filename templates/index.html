@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Support AI</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <link href="https://fonts.googleapis.com/css2?family=Segoe+UI:wght@400;600&display=swap" rel="stylesheet">
+</head>
+
+<body>
+
+    <div class="app-container">
+        <aside class="sidebar">
+            <div class="logo">
+                <h2>🎓 Student AI</h2>
+                <p>Your 24/7 Campus Companion</p>
+            </div>
+
+            <div class="settings">
+                <label for="language"
+                    style="display:block; text-align:left; margin-bottom:5px; opacity:0.8; font-size:0.9rem;">Language</label>
+                <select id="language">
+                    <option value="en">English</option>
+                    <option value="kn">Kannada (ಕನ್ನಡ)</option>
+                    <option value="hi">Hindi (हिंदी)</option>
+                    <option value="ta">Tamil (தமிழ்)</option>
+                    <option value="te">Telugu (తెలుగు)</option>
+                    <option value="ml">Malayalam (മലയാളം)</option>
+                    <option value="mr">Marathi (मराठी)</option>
+                    <option value="bn">Bengali (বাংলা)</option>
+                    <option value="gu">Gujarati (ગુજરાતી)</option>
+                    <option value="pa">Punjabi (ਪੰਜਾਬੀ)</option>
+                    <option value="ur">Urdu (اردو)</option>
+
+                </select>
+            </div>
+        </aside>
+
+        <main class="chat-section">
+            <header class="chat-header">
+                <div class="chat-info">
+                    <h3>Student Support Assistant</h3>
+                    <span class="status">● Online</span>
+                </div>
+                <a href="/logout"
+                    style="text-decoration:none; color:white; background:#ff6b6b; padding:5px 15px; border-radius:15px; font-size:0.9rem;">Logout</a>
+            </header>
+
+
+            <div id="chat-body" class="chat-body">
+                <div class="message bot-message">
+                    👋 Hello! I’m here to help you with Attendance, Timetables, Syllabus, and Exams. How can I assist
+                    you today?
+                </div>
+            </div>
+
+            <footer class="chat-footer">
+                <input type="text" id="user-input" placeholder="Type your message here..." autocomplete="off">
+                <button id="send-btn">➤</button>
+            </footer>
+        </main>
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf-autotable/3.5.23/jspdf.plugin.autotable.min.js"></script>
+    <script src="{{ url_for('static', filename='script.js') }}"></script>
+</body>
+
+</html>

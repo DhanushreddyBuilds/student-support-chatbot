@@ -1,0 +1,46 @@
+text,intent
+hello,greeting
+hi,greeting
+hey,greeting
+good morning,greeting
+
+i want to join your college,admission
+how to apply for admission,admission
+admission process,admission
+i want to take admission,admission
+
+what courses are available,courses
+tell me about bca,courses
+i want to study mca,courses
+course details,courses
+available programs,courses
+
+what is the fee for bca,fees
+tell me course fee,fees
+how much is the fee,fees
+fee structure,fees
+
+i want to know my attendance,attendance
+attendance details,attendance
+how much attendance i have,attendance
+check my attendance,attendance
+
+exam schedule,exams
+exam timetable,exams
+when are exams,exams
+exam dates,exams
+
+i need bonafide certificate,admin
+how to get certificate,admin
+id card issue,admin
+library access,admin
+
+i am weak in studies,academic
+how to improve marks,academic
+study tips,academic
+academic help,academic
+
+career guidance,career
+job opportunities,career
+future options,career
+placements information,career

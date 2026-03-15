@@ -1,0 +1,230 @@
+:root {
+    --primary-gradient: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    --secondary-gradient: linear-gradient(120deg, #84fab0 0%, #8fd3f4 100%);
+    --bg-color: #f0f2f5;
+    --chat-bg: #ffffff;
+    --user-msg-bg: #667eea;
+    --bot-msg-bg: #f1f0f0;
+    --text-color: #333;
+    --shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    --glass: rgba(255, 255, 255, 0.8);
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+    background: var(--bg-color);
+    margin: 0;
+    padding: 0;
+    height: 100vh;
+    width: 100vw;
+    overflow: hidden;
+}
+
+.app-container {
+    width: 100%;
+    height: 100%;
+    background: var(--glass);
+    backdrop-filter: blur(10px);
+    border-radius: 0;
+    box-shadow: none;
+    display: flex;
+    overflow: hidden;
+    animation: fadeIn 0.8s ease-in-out;
+}
+
+
+/* Sidebar */
+.sidebar {
+    width: 300px;
+    background: var(--primary-gradient);
+    color: white;
+    padding: 2rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+.sidebar h2 {
+    font-size: 2rem;
+    margin-bottom: 0.5rem;
+}
+
+.sidebar p {
+    margin-bottom: 2rem;
+    opacity: 0.8;
+}
+
+.sidebar select {
+    padding: 0.8rem;
+    border-radius: 10px;
+    border: none;
+    width: 100%;
+    font-size: 1rem;
+    cursor: pointer;
+    background: rgba(255, 255, 255, 0.2);
+    color: white;
+    backdrop-filter: blur(5px);
+}
+
+.sidebar select option {
+    background: #667eea;
+    color: white;
+}
+
+/* Chat Section */
+.chat-section {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    background: var(--chat-bg);
+}
+
+.chat-header {
+    padding: 1.5rem;
+    border-bottom: 1px solid #eee;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.status {
+    color: #2ecc71;
+    font-size: 0.9rem;
+    font-weight: bold;
+}
+
+.chat-body {
+    flex: 1;
+    padding: 2rem;
+    overflow-y: auto;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    scroll-behavior: smooth;
+}
+
+/* Messages */
+.message {
+    max-width: 70%;
+    padding: 1rem 1.5rem;
+    border-radius: 15px;
+    font-size: 1rem;
+    line-height: 1.5;
+    position: relative;
+    animation: popIn 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.bot-message {
+    align-self: flex-start;
+    background: var(--bot-msg-bg);
+    border-bottom-left-radius: 2px;
+}
+
+.user-message {
+    align-self: flex-end;
+    background: var(--user-msg-bg);
+    color: white;
+    border-bottom-right-radius: 2px;
+    box-shadow: 0 4px 15px rgba(102, 126, 234, 0.3);
+}
+
+/* Chat Footer */
+.chat-footer {
+    padding: 1.5rem;
+    display: flex;
+    gap: 1rem;
+    border-top: 1px solid #eee;
+    background: white;
+}
+
+.chat-footer input {
+    flex: 1;
+    padding: 1rem;
+    border-radius: 30px;
+    border: 1px solid #ddd;
+    outline: none;
+    transition: 0.3s;
+}
+
+.chat-footer input:focus {
+    border-color: #667eea;
+    box-shadow: 0 0 10px rgba(102, 126, 234, 0.2);
+}
+
+.chat-footer button {
+    background: var(--primary-gradient);
+    color: white;
+    border: none;
+    padding: 0 1.5rem;
+    border-radius: 30px;
+    cursor: pointer;
+    transition: transform 0.2s;
+    font-size: 1.2rem;
+}
+
+.chat-footer button:hover {
+    transform: scale(1.05);
+}
+
+/* Animations */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes popIn {
+    from {
+        opacity: 0;
+        transform: scale(0.8);
+    }
+
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .app-container {
+        flex-direction: column;
+        height: 100vh;
+        width: 100%;
+        border-radius: 0;
+    }
+
+    .sidebar {
+        width: 100%;
+        padding: 1rem;
+        flex-direction: row;
+        justify-content: space-between;
+    }
+
+    .sidebar p {
+        display: none;
+    }
+
+    .sidebar h2 {
+        font-size: 1.2rem;
+        margin: 0;
+    }
+
+    .sidebar select {
+        width: auto;
+    }
+}
